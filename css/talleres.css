@@ -1,0 +1,21 @@
+
+.talleres-menu{
+	padding: 3em 0;
+	background-color: #F2F1F0;
+}
+
+.talleres__img{
+	width: 100%;
+	height: 20em;
+	object-fit: cover;
+	padding-bottom: 2.5em;
+}
+
+.beneficios{
+	padding: 3em 0;
+}
+
+
+@media screen and (max-width: 900px){
+	
+}

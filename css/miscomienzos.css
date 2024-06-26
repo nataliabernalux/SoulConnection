@@ -1,0 +1,93 @@
+
+
+.mis-comienzos{
+	padding: 3em 0;
+	background-color: #F2F1F0;
+}
+
+.talleres__img{
+	width: 100%;
+	height: 20em;
+	object-fit: cover;
+	padding-bottom: 2.5em;
+}
+
+.historia-img{
+	width: 100%;
+	height: 20em;
+	object-fit: cover;
+	padding-bottom: ;
+}
+
+.historia{
+	padding: 3em 0;
+}
+
+.historia h5{
+	padding: 0;
+}
+
+.mis-comienzos p{
+	padding-bottom: 1.5em;
+}
+
+
+.bottom-space{
+	padding-bottom: 1em;
+}
+
+.align-center{
+	align-items: center;
+}
+
+.columna {
+	width: 100%;
+	padding-top: 0.5em;
+	padding-bottom: 4em;
+	
+}
+
+
+
+.columna + .columna {
+	margin-left: 3em;
+}
+.fila {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-container{
+	padding-bottom: 3em;
+} 
+
+
+/* Media query for phone-sized screens */
+@media screen and (max-width: 35rem) {
+    .fila {
+        flex-direction: column-reverse;
+    }
+    .columna {
+        margin-left: 0; /* Remove margin between columns */
+        padding-bottom: 1em; /* Add padding to the bottom of columns */
+    }
+	
+	.columna + .columna {
+	margin-left: 0;
+}
+	
+  
+  .text-container {
+        order: 1!important;
+    }
+  
+  .below-img-phone {
+        order:2!important;
+    }
+  
+}
+
+
+
+
+

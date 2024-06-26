@@ -1,0 +1,782 @@
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 1em; /* Standard font size */
+    color: #666; /* Softer text color */
+}
+
+p {
+    line-height: 1.5; /* Better readability */
+    margin-top: 0.5em; /* Margin above the paragraph */
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+	font-family: bitter, serif;
+    font-size: 3.5rem;
+	color: #00B5A3;
+	font-weight: bold;
+    margin-top: 0;
+	margin-bottom: 0.3em;
+	
+}
+
+h2{
+	font-family: bitter, serif;
+	font-size: 1.8em;
+	font-weight: bold;
+    color: #3A3A3A;
+	margin-bottom: 1em;
+	padding: 0;
+	text-align: center;
+	
+	
+	
+	
+}
+
+
+
+h3 {
+	text-transform: uppercase;
+	color: #00B5A3;
+	font-family: Roboto, sans-serif;
+	font-weight: 300;
+	font-size: 1em;
+	margin:0;
+}
+
+h4 {
+	text-transform: uppercase;
+	color: #008C8E;
+	font-family: Vazirmatn, sans-serif;
+	font-weight: 400;
+	margin:0;
+}
+
+h5{
+	font-size: 20px;
+	color: #008C8E;
+	font-family: Vazirmatn, sans-serif;
+	font-weight: 400;
+	margin:0;
+	padding-top: 1em;
+}
+
+header {
+	
+    background: white;
+    padding: .7em 0;
+	z-index: 999;
+    width: 100%; /* Make the header span the full width */
+	
+}
+
+.heading-box{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 0 20px 0 20px;
+}
+
+
+
+
+
+
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.siendotierra-logo{
+    font-family: Averia Sans Libre, sans-serif;
+    color: #008C8E;
+    text-decoration: none;
+    font-weight: bold;
+	font-size: 24px;
+}
+
+.nav-toggle {
+  cursor: pointer;
+  border: 0;
+  width: 3rem;
+  height: 3rem;
+  padding: 0em;
+  background: rgba(0, 0, 0, 0);
+  color: #00B5AA;
+  transition: opacity 250ms ease;
+  z-index: 9999;
+	
+ 
+
+}
+
+
+.nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+	display: flex;
+	
+}
+
+.nav{
+	display:flex;
+	justify-content: space-between;
+	 
+}
+
+
+
+.nav__item + .nav__item{
+	margin-left: 1em;
+}
+
+.nav__link {
+	font-family: Vazirmatn, sans-serif;
+    color: #008C8E;
+    text-decoration: none;
+    font-weight: medium;
+}
+
+.nav__link--button {
+    background: #fff;
+    color: #32E0C4;
+    padding: .25em 1em;
+    border-radius: 10em;
+}
+
+.nav__link:hover {
+    opacity: .75;
+}
+
+
+
+
+
+
+/* Style for the hamburger icon */
+.hamburger {
+  display: block;
+  width: 30px; /* Adjust the size as needed */
+  height: 3px; /* Adjust the size as needed */
+  background-color: #00B5AA; /* Color of the hamburger icon */
+  margin: 6px auto; /* Spacing between the bars */
+  transition: 0.4s;
+}
+
+/* Style for the "open" and "close" states of the hamburger menu */
+.nav--visible .hamburger {
+  background-color: transparent; /* Hide the middle bar when menu is open */
+  transform: rotate(-45deg); /* Rotate the top bar */
+}
+
+.nav--visible .hamburger:before,
+.nav--visible .hamburger:after {
+  top: 0;
+  transform: rotate(45deg); /* Rotate the bottom bar */
+}
+
+
+
+
+
+
+.hamburger {
+  width: 50%;
+  position: relative;
+  z-index: 99;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  margin: 0 auto;
+  height: 3px;
+  background: #008C8E;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  width: 100%;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+
+
+.hero{
+	background-color:#F2F1F0;
+	position: relative;
+	overflow: hidden;
+}
+
+.outer-box{
+	width: 95%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.hero-img{
+	max-width: 100%;
+    margin: 0 auto;	
+	height: 70vh;
+    padding: 60px 0 70px 0;
+    background-image: url('img/hero4.png'); /* Set your background image URL here */ 
+	background-size: cover; /* Make the background image responsive */
+    background-position: center bottom 15px; /* Center the background image and Move the background image 15px from the bottom*/
+    background-attachment: fixed;
+}
+  
+  
+
+.hero__text { 
+    width: 62%;
+    margin-top: 3em;
+}
+
+.hero__img {
+    width: 32%;
+    align-self: flex-start;
+	border-radius: 5px;
+}
+
+.hero p{
+	color: white;
+	margin: 0;
+}
+
+
+
+.btn {
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 100px;
+	margin-top: 3em;
+    margin-bottom: 3em;
+    padding: 10px 20px;
+    background-color: #00B5A3;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+	
+}
+
+.btn:hover,
+.btn:focus {
+    opacity: .75; 
+}
+
+.btn-center{
+	display: flex;
+	justify-content: center;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.servicios{
+	background-color: #F2F1F0;
+    padding-top: 2em; 
+}
+
+.servicios h2{
+	margin: 0 0 1em 0; /* Increase bottom margin */
+    
+}
+
+.servicios h5{
+	color: #444; /* Slightly darker text color */
+    font-size: 1.2em; /* Increase font size */
+    margin-top: 0.5em; /* Add margin above heading */
+}
+
+
+    
+
+.card {
+    background-color: white;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for the card */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+    padding: 1.5em; /* Add padding inside the card */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+
+.inner-box{
+	background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(242,241,240,1) 100%);
+	padding: 3em 0;
+}
+
+
+
+
+.colums {
+	display: flex;
+}
+
+.col {
+	width:100%;
+	padding-top: 1em;
+	
+}
+
+
+.col + .col {
+	margin-left: 4em;
+}
+
+.text-center {
+	width: 100%;
+    padding-top: 1em;
+    text-align: center; /* Center the content within each column */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items vertically within the column */
+	
+}
+
+
+/*slider*/
+.descubre-productos-background {
+    background-color: #f9f9f9; /* Light gray background */
+    padding: 4em 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.heading-box {
+    margin-bottom: 1em;
+}
+
+.section-title {
+    font-size: 2.3em;
+    color: #333;
+    margin: 0;
+}
+
+.intro-text {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 2em;
+}
+
+.descubre-productos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(250px * 18);
+    animation: scroll 80s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 9));
+    }
+}
+
+.slide {
+    height: 200px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px; /* Rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.btn-center {
+    margin-top: 3em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    color: white;
+    background-color: #cd5909; /* Turquoise color */
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #136C72; /* Darker turquoise color */
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .descubre-productos p {
+        padding: 0 1em;
+    }
+}
+
+
+.talleres {
+background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(228,208,188,1) 100%);
+padding-bottom: 3em;
+	
+}
+
+/*Footer style*/
+.footer {
+  background-color: #136C72;
+  color: #d3d3d3;
+  position: relative;
+  padding: 2.5em 0; /* Add padding to the top and bottom */
+  text-align: center;
+}
+
+
+.footer .footer-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Set height to 100% for responsiveness */
+}
+
+
+.footer-left-section,
+.footer-right-section {
+  flex: 1;
+  max-width: 300px;
+  min-width: 200px; /* Reduce min-width for smaller screens */
+}
+
+.footer-left-section{
+		font-family: Roboto Flex, sans-serif;
+		font-weight: 500;
+		font-size: 32px;
+		color: white;
+	}
+
+
+.footer-middle-section{
+		width: 3px;
+		border-left: 2px solid #F0EAD9;
+		height: 190px;
+		position: absolute;
+		left: 50%;
+		margin-left: -3px;
+		
+	}
+
+
+
+
+.myname{
+		font-family: Roboto Flex, sans-serif;
+		font-size: 26px;
+		font-weight: 400;
+		margin-bottom: 20px;
+		color: white;
+		margin-left: 1.5em;
+		
+	}
+	
+.myname p{
+	padding: 0;
+	
+}	
+	
+	
+	.social-media{
+		display: flex;
+		align-items: center;
+		font-family: Roboto, sans-serif;
+		color: white;
+		font-size: 18px;
+		font-weight: 300;
+		margin-left: 2.5em;
+	}
+	
+	.social-media p{
+		padding: .5em;;
+		margin: 0;
+	}
+	
+	.icon{
+		height: 28px;
+		margin-right: .1em;
+		color: #98f6f0;
+		}
+	
+	.linkedin-icon{
+		height: 28px;
+	}
+
+
+
+/*footer media*/
+
+@media (max-width: 800px) {
+   
+  .footer .footer-content {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center-align text */
+  }
+
+  .footer-left-section,
+  .footer-right-section {
+    max-width: none; /* Remove max-width to allow full width */
+    width: 100%; /* Make sections take full width */
+    margin: 10px 0; /* Add vertical margin for spacing */
+  }
+  
+  /* Hide the middle section for small screens */
+  .footer-middle-section {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+.social-media{
+	margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.myname{
+	margin-left: 0;
+}
+  
+}
+
+
+
+
+
+
+
+
+
+/*nav media*/
+
+@media screen and (max-width: 900px) {
+	
+	 .nav {
+  transition: max-height 7.9s ease; /* Aquí ajustas la duración (0.5s en este ejemplo) y el tipo de animación (ease) */
+
+    display: none; /* Hide the navigation menu by default on small screens */
+	 text-align: center; 
+  }
+  
+  .nav--visible {
+    display: block; /* Show the navigation menu when the "nav--visible" class is added */
+  }
+	.nav__list{
+		display: block;
+		text-align: center; /* Center align the list items within the centered menu */
+		margin: 0 auto; /* Center the list items horizontally */
+	}
+	
+	.nav__item {
+    display: block;
+    margin: 0; /* Remove any margin for list items */
+  }
+	
+	  .nav__link {
+    display: inline-block; /* Ensure links are inline-block for centering */
+    margin: 0; /* Remove any margin for links */
+  }
+
+	
+	.nav__item + .nav__item{
+	margin-left: 0;
+}
+
+	.first__list{
+		margin-bottom: 1.5em !important;
+	}
+
+	.siendotierra-logo{
+		color: #008C8E;
+		margin-bottom: 3em !important; /*fix it is not working*/
+	}
+	
+	.nav__link {
+	    color: #008C8E;
+	}
+	
+	 .nav__item {
+    display: block;
+    }
+	
+	
+	header {
+		background: #EDE8E0;
+		padding: .7em 0;
+	}
+    
+	.hero__text {
+        width: 100%;
+    }
+    .hero__img {
+        width: 100%;
+    }
+	.hero{
+		width: 100%;
+	}
+	
+	.bottom-space{
+		padding-bottom: 2em;
+	}
+	
+	.row {
+		display: block;
+	}
+	
+	.col + .col {
+	margin-left: 0;
+}
+	
+	.colums {
+	display: block;
+}
+.col {
+	margin-top: 2em;
+}
+}
+
+
+@media screen and (min-width: 901px) {
+  .hamburger {
+    display: none;
+  }
+  
+  .nav-toggle {
+    display: none;
+  }
+}
+
+
+
+/*Gallery media*/
+
+@media screen and (max-width: 60rem) {
+    .wrapper {
+        padding: 1rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Gallery Layout */
+    .gallery__item--1 {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+    }
+
+    .gallery__item--2 {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+    }
+
+    .gallery__item--3 {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 2;
+    }
+
+    .gallery__item--4 {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 2;
+    }
+
+    .gallery__item--5 {
+        grid-column: 2 / span 1;
+        grid-row: 3 / span 1;
+    }
+
+    .gallery__item--6 {
+        grid-column: 2 / span 1;
+        grid-row: 4 / span 1;
+    }
+
+    .gallery__overlay {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 35rem) {
+    /* Hide the gallery container */
+    .gallery-container {
+        display: none;
+    }
+
+    .phone-gallery-picture {
+    background-image: url('img/phone-gallery.png'); /* Replace with the actual image URL */
+    background-size: cover;
+    background-position: center;
+    height: 100vw; /* You can adjust the height as needed */
+}
+.colums {
+	display: block;
+}
+}
