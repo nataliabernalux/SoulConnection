@@ -25,7 +25,7 @@
 /* Add a dark overlay to the hero section */
 .hero {
     position: relative;
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
     height: 70vh; /* Adjust the height as needed */
 }
@@ -190,6 +190,43 @@
     opacity: 0.7; /* Adjust the opacity value as needed */
 }
 
+.btn {
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 100px;
+    padding: 10px 20px;
+    background-color: #124EBD;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+	
+}
+
+.btn:hover,
+.btn:focus {
+    opacity: .75; 
+}
+
+.btn-center{
+	display: flex;
+	justify-content: center;
+}
+
+
+/* Additional styling for the "Ver Todos" button */
+.productos .btn-center {
+    text-align: center;
+    margin-top: 10px;
+	
+}
+
+
+
+/* Specific rule to make .productos .btn text white */
+.productos .btn,
+.productos .btn:visited {
+    color: #fff;
+}
 
 
 
@@ -262,36 +299,11 @@
         color: #333;
         font-weight: bold;
     }
+
+    
 }
 
 
-
-
-
-
-
-
-/* Additional styling for the "Ver Todos" button */
-.productos .btn-center {
-    text-align: center;
-    margin-top: 20px;
-	margin-bottom: 1em;
-}
-
-.productos .btn {
-    padding: 10px 20px;
-    background-color: #00B5A3;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-
-}
-
-/* Specific rule to make .productos .btn text white */
-.productos .btn,
-.productos .btn:visited {
-    color: #fff;
-}
 
 
 
