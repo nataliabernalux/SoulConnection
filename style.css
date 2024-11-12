@@ -786,6 +786,10 @@ header {
 
 /* Media Query for Smaller Screens */
 @media (max-width: 768px) {
+
+  .hero-img {
+    height: 70vh ;
+  }
   .hero h1 {
     font-size: 5rem; /* Adjust size for smaller screens */
   }
@@ -799,23 +803,50 @@ header {
     height: 12em;
     margin-top: 1.5em; /* Space between the title and mandala */
   }
+
+  .crystals {
+    background-size: 120% auto; /* Increase size slightly for larger screens */
+    background-position: center top; /* Adjust positioning to top-center */
+  }
+
+  .crystals-img {
+    background-position: center top; /* Move the focus to the top of the image */
+    height: 50vh; /* Reduces height of the crystals image for smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
+  .hero-img {
+    height: 65vh; /* Smaller height */
+    
+  }
+
   .hero h1 {
-    font-size: 4rem; /* Smaller size for very small screens */
+    font-size: 4rem;
   }
 
   .hero__text h3 {
-    font-size: 1.3rem; /* Smaller size for very small screens */
+    font-size: 1.3rem;
   }
 
   .mandala-hero {
     width: 10em;
     height: 10em;
-    margin-top: 1em; /* Space between the title and mandala */
+    margin-top: 1em;
+  }
+
+
+  .crystals {
+    background-size: 150% auto; /* Scale up slightly to cover more area */
+    background-position: center top; /* Position it at the top */
+    
+    
+  }
+
+  .crystals-img {
+    height: 45vh; 
+    background-position: top center; /* Move the image so the crystals are less centered */
   }
 }
-
 
 
