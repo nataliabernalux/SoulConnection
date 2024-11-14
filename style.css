@@ -11,7 +11,7 @@ html{
 body {
     margin: 0;
     font-family: 'Roboto Flex', sans-serif;
-    font-size: 1em; /* Standard font size */
+    font-size: 0.9em; /* Standard font size */
     color: #4c4c4c; /* Softer text color */
 }
 
@@ -423,13 +423,31 @@ header {
 
 .therapy-description {
   position: relative; /* Permite posicionar elementos hijos en relación con este contenedor */
-  background-image: url('img/jazmin9\ \(2\).png'); /* Fondo de la sección */
-  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+  background-image: url('img/jazmin9\ \(2\).png'); 
+  background-size: cover; 
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita repetir la imagen */
-  padding: 3em 2em; /* Espaciado interno */
-  
-  text-align: center; /* Centra el texto */
+  padding: 3em 2em; 
+  text-align: center; 
+  color: #333; /* Ensures text remains legible */
+
+  /* Overlay effect */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* Light overlay with subtle effect */
+    z-index: 1; /* Places overlay above background image */
+  }
+
+  /* Ensures content is above overlay */
+  * {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .therapy-description .container {
@@ -437,15 +455,66 @@ header {
   z-index: 2; /* Coloca el contenido sobre el fondo */
 }
 
+.therapy-description p{
+  font-size: 16px;
+}
 
-/*slider*/
-.testimonios-background {
+/*Testimonials*/
+.testimonials {
   background-color: #f9f9f9; /* Light gray background */
-  padding: 4em 0;
+  padding: 4em 1em; /* Add padding for smaller screens */
   text-align: center;
 }
 
+.testimonials-item {
+  background: rgba(255, 182, 193, 0.2); /* Soft pink with transparency */
+  backdrop-filter: blur(10px); /* Glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 182, 193, 0.3); /* Subtle border matching background */
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 50%; /* Ensure it fits 2 items in 100% width */
+  margin: 0 0px 1em 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  color: #333;
+  position: relative; /* Ensures items layer above other elements */
+}
 
+/* Testimonial text */
+.testimonials-item p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4a4a4a; /* Softer black for a modern feel */
+}
+
+/* Rating stars */
+.testimonials-item .rating {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #9a2e37;
+}
+
+.swiper-scrollbar {
+  background-color: #f9f9f9; /* White background for the scrollbar track */
+  margin-top: 2em;
+  height: px; /* Reduced height for the scrollbar */
+}
+
+
+/* Pagination dots style */
+.swiper-pagination-bullet {
+  background-color: rgba(255, 182, 193, 0.8); /* Soft pink for inactive dots */
+  opacity: 1; /* Ensure full opacity */
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%; /* Circular dots */
+}
+
+/* Active dot style */
+.swiper-pagination-bullet-active {
+  background-color: #892630; /* Darker pink for the active dot */
+}
 
 
 
@@ -502,7 +571,9 @@ header {
 }
 
 
-
+.call-action{
+  margin-top: 6em;
+}
 
 
 .crystals-img {
@@ -802,6 +873,10 @@ header {
     width: 12em;
     height: 12em;
     margin-top: 1.5em; /* Space between the title and mandala */
+  }
+  
+  .testimonials-item {
+    max-width: 100%; /* Utilize full space on larger devices */
   }
 
   .crystals {
