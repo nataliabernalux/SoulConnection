@@ -54,6 +54,34 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(document.querySelector(".hero"));
 });
 
+//card scroll animation
+
+// Function to check if an element is in the viewport
+function isElementInView(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.top >= 0 && rect.bottom <= window.innerHeight;
+}
+
+// Add the 'visible' class to the card elements when they come into view
+function animateOnScroll() {
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    if (isElementInView(card)) {
+      card.classList.add('visible'); // Trigger the animation when card is in view
+    }
+  });
+}
+
+// Listen for scroll events
+window.addEventListener('scroll', animateOnScroll);
+
+// Initialize animation on page load (in case some cards are already in view)
+document.addEventListener('DOMContentLoaded', animateOnScroll);
+
+
+
+
+
 
 //testimonials swiper
 
