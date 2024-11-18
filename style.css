@@ -430,11 +430,20 @@ opacity: 0; /* Start invisible */
 .inner-box{
 	background:rgba(242,241,240,1);
     background: linear-gradient(0deg, #EBE0D5 0%, rgba(242,241,240,1) 100%);
-	padding: 3em 0;
+	padding: 3em 0 0 0;
 }
 
+.half-mandala{
+display: flex;
+justify-content: center;
+align-items: end;
+}
 
-
+.half-mandala-img{
+max-width: 24em;
+height: 12em;
+margin-top: 3em;
+}
 
 
 .therapy-description {
