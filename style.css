@@ -652,17 +652,39 @@ margin-top: 3em;
 }
 
 .footer-left-section{
-    font-family: "Italianno", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 4em;
-	color: #F9DBA6;
-    text-decoration: none;
-    margin: 0;
-
-	}
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100%; /* Make sure it uses the available height of the parent container */
+}
 
 
+.footer-logo p {
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4em;
+  color: #F9DBA6;
+  text-decoration: none;
+  margin: 0;
+  position: relative; /* Positioned relative to stack above mandala */
+  z-index: 1; /* Ensure it is on top of the mandala */
+}
+
+.footer-mandala {
+  position: absolute; /* Position relative to the footer-left-section */
+  top: 50%; /* Move to vertical center */
+  left: 50%; /* Move to horizontal center */
+  transform: translate(-50%, -50%); /* Adjust for element's own size */
+  z-index: 0; /* Ensure it is behind the logo */
+}
+
+.footer-mandala-img {
+  width: 8em;
+  height: 8em;
+  opacity: 0.6;
+}
 
 .myname{
 		font-family: Roboto, sans-serif;
@@ -699,7 +721,29 @@ margin-top: 3em;
 		height: 24px;
 		margin-right: .1em;
 		color: #F9DBA6;
+    cursor: pointer;
 		}
+
+    .icon-2{
+      height: 32px;
+      margin-right: .1em;
+      color: #F9DBA6;
+      cursor: pointer;
+      }    
+
+      .footer-whatsapp-icon {
+        position: fixed; /* Fixed position keeps it in view while scrolling */
+        right: 10px; /* Adjust the distance from the right side */
+        bottom: 10px; /* Adjust the distance from the bottom */
+        z-index: 100; /* Ensure it's above other content */
+      }
+      
+      .whatsapp-icon {
+        height: 50px;
+        width: auto;
+        cursor: pointer; /* Change cursor to pointer for better UX */
+        transition: transform 0.3s ease; /* Smooth scaling effect */
+      }
 	
 	.linkedin-icon{
 		height: 28px;
