@@ -60,26 +60,22 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.card');
 
-  // Use IntersectionObserver to watch for visibility
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible'); // Add visible class when card enters viewport
-        observer.unobserve(entry.target); // Stop observing once animation is triggered
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Ensure it animates once and doesn't disappear
       }
     });
-  }, { threshold: 0.1 }); // Trigger when 10% of the card is visible
+  }, { threshold: 0.1 }); // Keep a low threshold for smoother small screen animation
 
   // Observe each card
-  cards.forEach(card => observer.observe(card));
+  cards.forEach((card, index) => {
+    observer.observe(card);
+    // Add staggered delay effect through CSS
+    card.style.transitionDelay = `${index * 150}ms`; 
+  });
 });
-
-// Listen for scroll events
-window.addEventListener('scroll', animateOnScroll);
-
-// Initialize animation on page load (in case some cards are already in view)
-document.addEventListener('DOMContentLoaded', animateOnScroll);
-
 
 
 
