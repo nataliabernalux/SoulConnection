@@ -60,20 +60,22 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.card');
 
+  // Create IntersectionObserver instance
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Ensure it animates once and doesn't disappear
+        // Apply staggered animation by adding a transition delay
+        entry.target.style.transitionDelay = `${index * 150}ms`;
+        entry.target.classList.add('visible'); // Add class to trigger animation
+        observer.unobserve(entry.target); // Stop observing once it's visible
       }
     });
-  }, { threshold: 0.1 }); // Keep a low threshold for smoother small screen animation
+  }, { threshold: 0.1 }); // Trigger when 10% of the card is visible
 
   // Observe each card
-  cards.forEach((card, index) => {
-    observer.observe(card);
-    // Add staggered delay effect through CSS
-    card.style.transitionDelay = `${index * 150}ms`; 
+  cards.forEach((card) => {
+    card.classList.remove('visible'); // Make sure cards are hidden initially
+    observer.observe(card); // Start observing each card
   });
 });
 

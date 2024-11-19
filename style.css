@@ -440,7 +440,7 @@ opacity: 0; /* Start invisible */
 /* Initial state of the cards - hidden and positioned off-screen for scrolling effect*/
 .card {
   opacity: 0;
-  transform: translateX(100%); /* For large screens: cards are off to the right */
+  transform: translateY(20px); /* Slight vertical offset */
   transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
