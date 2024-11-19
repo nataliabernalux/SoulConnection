@@ -54,23 +54,25 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(document.querySelector(".hero"));
 });
 
+
 //card scroll animation
 
-// Function to check if an element is in the viewport
-function isElementInView(el) {
-  const rect = el.getBoundingClientRect();
-  return rect.top >= 0 && rect.bottom <= window.innerHeight;
-}
-
-// Add the 'visible' class to the card elements when they come into view
-function animateOnScroll() {
+document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.card');
-  cards.forEach(card => {
-    if (isElementInView(card)) {
-      card.classList.add('visible'); // Trigger the animation when card is in view
-    }
-  });
-}
+
+  // Use IntersectionObserver to watch for visibility
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible'); // Add visible class when card enters viewport
+        observer.unobserve(entry.target); // Stop observing once animation is triggered
+      }
+    });
+  }, { threshold: 0.1 }); // Trigger when 10% of the card is visible
+
+  // Observe each card
+  cards.forEach(card => observer.observe(card));
+});
 
 // Listen for scroll events
 window.addEventListener('scroll', animateOnScroll);
