@@ -441,7 +441,7 @@ opacity: 0; /* Start invisible */
 .card {
   opacity: 0;
   transform: translateX(100%); /* For large screens: cards are off to the right */
-  transition: transform 1s ease, opacity 1s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 
@@ -1017,6 +1017,13 @@ margin-top: 3em;
 
 /* Scroll-in animation for large screens */
 @media (min-width: 768px) {
+  .card.visible {
+    opacity: 1;
+    transform: translateX(0); /* Cards come from the right */
+  }
+}
+
+@media (min-width: 480px) {
   .card.visible {
     opacity: 1;
     transform: translateX(0); /* Cards come from the right */
