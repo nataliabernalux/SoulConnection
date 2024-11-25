@@ -81,66 +81,60 @@ h5{
 
 }
 
+/* -------------------------------- */
+/* Header Styles */
+/* -------------------------------- */
+
+/* Transparent header for the initial state */
+#main-header {
+  background: transparent; /* Transparent background */
+  position: absolute; /* Overlays the hero section */
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#main-header .soulconnection-logo,
+#main-header .nav__link {
+  color: #F9DBA6; /* Yellow text for transparent header */
+  transition: color 0.3s ease;
+}
+
+/* Fixed header when scrolled */
+#main-header.scrolled {
+  background: #EBE0D5; /* Original background */
+  position: fixed;
+  color: #74262C; /* Reset text color */
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#main-header.scrolled .soulconnection-logo,
+#main-header.scrolled .nav__link {
+  color: #74262C; /* Original text color */
+}
+
+/* -------------------------------- */
+/* Logo Styles */
+/* -------------------------------- */
 .soulconnection-logo {
   font-family: "Italianno", cursive;
   font-weight: 500;
   font-style: normal;
   font-size: 3em;
-  color: #74262C;
   text-decoration: none;
   margin: 0;
   line-height: 1;
   display: flex;
   align-items: center;
+  color: #74262C; /* Default color */
 }
 
-header {
-	
-    background: #EBE0D5;
-    padding: .7em 0;
-	  z-index: 999;
-    width: 100%; /* Make the header span the full width */
-	
-}
-
-.heading-box{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	margin: 0 20px 0 20px;
-}
-
-
-
-
-
-
-.container {
-    width: 80%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-
-
-.nav-toggle {
-  cursor: pointer;
-  border: 0;
-  width: 3rem;
-  height: 3rem;
-  padding: 0em;
-  background: rgba(0, 0, 0, 0);
-  color: #74262C;
-  transition: opacity 250ms ease;
-  z-index: 9999;
-	
- 
-
-}
-
-
+/* -------------------------------- */
+/* Navigation Styles */
+/* -------------------------------- */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -155,90 +149,136 @@ header {
   list-style: none;
 }
 
-
-.nav__item + .nav__item{
-	margin-left: 1em;
+.nav__item + .nav__item {
+  margin-left: 1em;
 }
 
 .nav__link {
-	font-family: 'Roboto Flex', sans-serif;
+  font-family: 'Roboto Flex', sans-serif;
   font-size: 1.3em;
-    color: #74262C;
-    text-decoration: none;
-    font-weight: bold;
+  text-decoration: none;
+  font-weight: bold;
+  color: #74262C; /* Default color */
 }
 
 .nav__link--button {
-    background: #fff;
-    color: #74262C;
-    padding: .25em 1em;
-    border-radius: 10em;
+  background: #fff;
+  color: #74262C;
+  padding: 0.25em 1em;
+  border-radius: 10em;
 }
 
 .nav__link:hover {
-    opacity: .75;
+  opacity: 0.75;
 }
 
-
-
-
-
-
-/* Style for the hamburger icon */
-.hamburger {
-  display: block;
-  width: 30px; /* Adjust the size as needed */
-  height: 3px; /* Adjust the size as needed */
-  background-color: #74262C; /* Color of the hamburger icon */
-  margin: 6px auto; /* Spacing between the bars */
-  transition: 0.4s;
-}
-
-/* Style for the "open" and "close" states of the hamburger menu */
-.nav--visible .hamburger {
-  background-color: transparent; /* Hide the middle bar when menu is open */
-  transform: rotate(-45deg); /* Rotate the top bar */
-}
-
-.nav--visible .hamburger:before,
-.nav--visible .hamburger:after {
-  top: 0;
-  transform: rotate(45deg); /* Rotate the bottom bar */
-}
-
-
-
-
-
-
+/* -------------------------------- */
+/* Hamburger Icon Styles */
+/* -------------------------------- */
 .hamburger {
   width: 50%;
   position: relative;
   z-index: 99;
+  display: block;
+  margin: 0 auto;
 }
 
 .hamburger,
 .hamburger::before,
 .hamburger::after {
   display: block;
-  margin: 0 auto;
   height: 3px;
-  background: #74262C;
+  background-color: #F9DBA6; /* Default color */
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .hamburger::before,
 .hamburger::after {
   content: "";
+  position: absolute;
   width: 100%;
 }
 
+/* Top line */
 .hamburger::before {
-  transform: translateY(-6px);
+  transform: translateY(-6px); /* Adjust spacing */
 }
 
+/* Bottom line */
 .hamburger::after {
-  transform: translateY(3px);
+  transform: translateY(6px); /* Adjust spacing */
 }
+
+/* Scrolled state */
+header.scrolled .hamburger,
+header.scrolled .hamburger::before,
+header.scrolled .hamburger::after {
+  background-color: #74262C; /* Original color after scrolling */
+}
+
+/* -------------------------------- */
+/* Hamburger Icon Transition States */
+/* -------------------------------- */
+
+/* When header is scrolled */
+header.scrolled .hamburger {
+  background: #74262C;
+}
+
+header.scrolled .hamburger::before,
+header.scrolled .hamburger::after {
+  background: #74262C;
+}
+
+/* When the menu is visible */
+.nav--visible .hamburger {
+  background-color: transparent; /* Hide middle bar */
+  transform: rotate(-45deg); /* Rotate top bar */
+}
+
+.nav--visible .hamburger::before,
+.nav--visible .hamburger::after {
+  top: 0;
+  transform: rotate(45deg); /* Rotate bottom bar */
+}
+
+/* -------------------------------- */
+/* Miscellaneous */
+/* -------------------------------- */
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.heading-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.nav-toggle {
+  cursor: pointer;
+  border: 0;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background: rgba(0, 0, 0, 0);
+  color: #74262C;
+  transition: opacity 250ms ease;
+  z-index: 9999;
+}
+
+header {
+  background: #EBE0D5;
+  padding: 0.7em 0;
+  z-index: 999;
+  width: 100%;
+}
+
 
 
 
