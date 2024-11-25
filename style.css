@@ -369,6 +369,54 @@ header {
   }
 }
 
+.hero-scroll-btn {
+  position: absolute; /* Position relative to the parent container */
+  bottom: 40px; /* Adjust the distance from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center adjustment */
+  z-index: 5; /* Ensure it stays above other elements if needed */
+}
+
+a#scroll-btn {
+  height: 4em;
+  width: 2.5em;
+  border: 0.15em solid #fff;
+  border-radius: 1.6em;
+  display: block; /* Ensures it's treated as a block element */
+}
+
+/* Style for the scroll button's dot */
+a#scroll-btn::before {
+  position: absolute;
+  content: "";
+  top: 50%; /* Position the dot vertically centered */
+  left: 50%; /* Position the dot horizontally centered */
+  transform: translate(-50%, -50%); /* Corrects the centering */
+  width: 0.5em;
+  height: 0.5em;
+  background-color: #fff; /* White dot */
+  border-radius: 50%; /* Make it circular */
+  animation: move-down 2s infinite; /* Apply the animation */
+}
+
+/* Animation for the dot */
+@keyframes move-down {
+  0% {
+    transform: translate(-50%, -50%); /* Start at the centered position */
+  }
+  50% {
+    transform: translate(-50%, 10px); /* Move it downward */
+  }
+
+  80% {
+    opacity: 0.5;
+  }
+  
+  100% {
+    transform: translate(-50%, -50%); /* Return to the centered position */
+  }
+}
+
 
 
 .servicios{
@@ -974,9 +1022,6 @@ margin-top: 3em;
 /* Media Query for Smaller Screens */
 @media (max-width: 768px) {
 
-  .hero-img {
-    height: 70vh ;
-  }
   .hero h1 {
     font-size: 5rem; /* Adjust size for smaller screens */
   }
@@ -1009,11 +1054,7 @@ margin-top: 3em;
 }
 
 @media (max-width: 480px) {
-  .hero-img {
-    height: 65vh; /* Smaller height */
-    
-  }
-
+  
   .hero h1 {
     font-size: 4rem;
   }
