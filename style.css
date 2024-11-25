@@ -81,15 +81,17 @@ h5{
 
 }
 
-.soulconnection-logo{
-
-    font-family: "Italianno", cursive;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 3em;
-	  color: #74262C;
-    text-decoration: none;
-    margin: 0;
+.soulconnection-logo {
+  font-family: "Italianno", cursive;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 3em;
+  color: #74262C;
+  text-decoration: none;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 header {
@@ -139,20 +141,19 @@ header {
 }
 
 
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .nav__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-	display: flex;
-	
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-
-.nav{
-	display:flex;
-	justify-content: space-between;
-	 
-}
-
 
 
 .nav__item + .nav__item{
