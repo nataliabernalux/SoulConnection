@@ -1013,11 +1013,8 @@ margin-top: 3em;
 @media (max-width: 768px) {
 
   .hero h1 {
-    font-size: 5rem; /* Adjust size for smaller screens */
-  }
-
-  .hero__text h3 {
-    font-size: 1.5rem; /* Adjust size for smaller screens */
+    font-size: 5rem;
+    margin-top: 1.5em;
   }
 
   .mandala-hero {
@@ -1026,6 +1023,10 @@ margin-top: 3em;
     margin-top: 1.5em; /* Space between the title and mandala */
   }
   
+  .hero-scroll-btn{
+    margin-bottom: 2.5em;
+  }
+
   .testimonials-item {
     max-width: 100%; /* Utilize full space on larger devices */
   }
