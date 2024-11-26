@@ -87,7 +87,7 @@ h5{
 
 /* Transparent header for the initial state */
 #main-header {
-  background: transparent; /* Transparent background */
+  background: rgba(0, 0, 0, 0.5); /* Transparent background */
   position: absolute; /* Overlays the hero section */
   top: 0;
   width: 100%;
@@ -316,32 +316,22 @@ header {
   transition: background-color 0.3s ease;
 }
 
-.hero__text {
-  position: relative;
+.hero__text { 
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  z-index: 3; /* Ensure it’s above the overlay and mandala */
-}
-
-.hero-logo {
-  position: relative;
-  z-index: 4; /* Ensure logo is above mandala */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
+  width: 50%;
+  margin-top: 3em;
+  text-align: center;
 }
 
 .mandala-hero {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1; /* Ensure mandala is below hero text */
+  width: 12em;
+  height: 12em;
+  margin-bottom: 4em;
+  z-index: 3;
 }
 
-.mandala-hero-img {
-  width: 14em;
-  height: 14em;
-}
 
 .hero h1 {
   z-index: 5; /* Ensure h1 is above everything else */
@@ -351,7 +341,7 @@ header {
   font-size: 7rem;
   color: #F9DBA6;
   text-decoration: none;
-  margin: 0;
+  margin: 0 0 0.3em 0;
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
@@ -371,7 +361,7 @@ header {
 
 .hero-scroll-btn {
   position: absolute; /* Position relative to the parent container */
-  bottom: 40px; /* Adjust the distance from the bottom */
+  bottom: 4em; /* Adjust the distance from the bottom */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Center adjustment */
   z-index: 5; /* Ensure it stays above other elements if needed */
