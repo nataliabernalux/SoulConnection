@@ -1050,20 +1050,25 @@ margin-top: 3em;
 }
 
 @media (max-width: 480px) {
+
+  .hero-img{
+    height: 90vh;
+  }
   
   .hero h1 {
-    font-size: 4rem;
-    margin-top: 1.5em;
+    font-size: 4.5rem;
+    margin-top: 1.3em;
   }
-
-  
 
   .mandala-hero {
     width: 10em;
     height: 10em;
-    margin-top: 1.5em;
+    margin-bottom: 1.8em;
   }
 
+  .hero-scroll-btn{
+    margin-bottom: 1em;
+  }
 
   .crystals {
     background-size: 150% auto; /* Scale up slightly to cover more area */
