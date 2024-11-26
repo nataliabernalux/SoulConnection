@@ -899,6 +899,12 @@ margin-top: 3em;
   .nav--visible {
     display: block; /* Show the navigation menu when the "nav--visible" class is added */
   }
+
+  .soulconnection-logo{
+    display: block;
+		text-align: center; 
+		margin: 0 auto; 
+  }
 	.nav__list{
 		display: block;
 		text-align: center; /* Center align the list items within the centered menu */
@@ -1065,6 +1071,8 @@ margin-top: 3em;
     height: 10em;
     margin-bottom: 1.8em;
   }
+
+  
 
   .hero-scroll-btn{
     margin-bottom: 1em;
