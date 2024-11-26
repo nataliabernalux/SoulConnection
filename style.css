@@ -11,7 +11,7 @@ html{
 body {
     margin: 0;
     font-family: 'Roboto Flex', sans-serif;
-    font-size: 0.9em; /* Standard font size */
+    
     color: #4c4c4c; /* Softer text color */
 }
 
@@ -81,162 +81,204 @@ h5{
 
 }
 
-.siendotierra-logo{
+/* -------------------------------- */
+/* Header Styles */
+/* -------------------------------- */
 
-    font-family: "Italianno", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 30px;
-	color: #F9DBA6;
-    text-decoration: none;
-    margin: 0;
+/* Transparent header for the initial state */
+#main-header {
+  background: rgba(0, 0, 0, 0.5); /* Transparent background */
+  position: absolute; /* Overlays the hero section */
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-header {
-	
-    background: #EBE0D5;
-    padding: .7em 0;
-	z-index: 999;
-    width: 100%; /* Make the header span the full width */
-	
+#main-header .soulconnection-logo,
+#main-header .nav__link {
+  color: #F9DBA6; /* Yellow text for transparent header */
+  transition: color 0.3s ease;
 }
 
-.heading-box{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	margin: 0 20px 0 20px;
+/* Fixed header when scrolled */
+#main-header.scrolled {
+  background: #EBE0D5; /* Original background */
+  position: fixed;
+  color: #74262C; /* Reset text color */
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-
-
-
-
-
-.container {
-    width: 80%;
-    max-width: 1100px;
-    margin: 0 auto;
+#main-header.scrolled .soulconnection-logo,
+#main-header.scrolled .nav__link {
+  color: #74262C; /* Original text color */
 }
 
-
-
-.nav-toggle {
-  cursor: pointer;
-  border: 0;
-  width: 3rem;
-  height: 3rem;
-  padding: 0em;
-  background: rgba(0, 0, 0, 0);
-  color: #74262C;
-  transition: opacity 250ms ease;
-  z-index: 9999;
-	
- 
-
+/* -------------------------------- */
+/* Logo Styles */
+/* -------------------------------- */
+.soulconnection-logo {
+  font-family: "Italianno", cursive;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 3em;
+  text-decoration: none;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  color: #74262C; /* Default color */
 }
 
+/* -------------------------------- */
+/* Navigation Styles */
+/* -------------------------------- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .nav__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-	display: flex;
-	
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.nav{
-	display:flex;
-	justify-content: space-between;
-	 
-}
-
-
-
-.nav__item + .nav__item{
-	margin-left: 1em;
+.nav__item + .nav__item {
+  margin-left: 1em;
 }
 
 .nav__link {
-	font-family: 'Roboto Flex', sans-serif;
-    color: #74262C;
-    text-decoration: none;
-    font-weight: bold;
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 1.3em;
+  text-decoration: none;
+  font-weight: bold;
+  color: #74262C; /* Default color */
 }
 
 .nav__link--button {
-    background: #fff;
-    color: #74262C;
-    padding: .25em 1em;
-    border-radius: 10em;
+  background: #fff;
+  color: #74262C;
+  padding: 0.25em 1em;
+  border-radius: 10em;
 }
 
 .nav__link:hover {
-    opacity: .75;
+  opacity: 0.75;
 }
 
-
-
-
-
-
-/* Style for the hamburger icon */
-.hamburger {
-  display: block;
-  width: 30px; /* Adjust the size as needed */
-  height: 3px; /* Adjust the size as needed */
-  background-color: #74262C; /* Color of the hamburger icon */
-  margin: 6px auto; /* Spacing between the bars */
-  transition: 0.4s;
-}
-
-/* Style for the "open" and "close" states of the hamburger menu */
-.nav--visible .hamburger {
-  background-color: transparent; /* Hide the middle bar when menu is open */
-  transform: rotate(-45deg); /* Rotate the top bar */
-}
-
-.nav--visible .hamburger:before,
-.nav--visible .hamburger:after {
-  top: 0;
-  transform: rotate(45deg); /* Rotate the bottom bar */
-}
-
-
-
-
-
-
+/* -------------------------------- */
+/* Hamburger Icon Styles */
+/* -------------------------------- */
 .hamburger {
   width: 50%;
   position: relative;
   z-index: 99;
+  display: block;
+  margin: 0 auto;
 }
 
 .hamburger,
 .hamburger::before,
 .hamburger::after {
   display: block;
-  margin: 0 auto;
   height: 3px;
-  background: #74262C;
+  background-color: #F9DBA6; /* Default color */
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .hamburger::before,
 .hamburger::after {
   content: "";
+  position: absolute;
   width: 100%;
 }
 
+/* Top line */
 .hamburger::before {
-  transform: translateY(-6px);
+  transform: translateY(-6px); /* Adjust spacing */
 }
 
+/* Bottom line */
 .hamburger::after {
-  transform: translateY(3px);
+  transform: translateY(6px); /* Adjust spacing */
 }
+
+/* Scrolled state */
+header.scrolled .hamburger,
+header.scrolled .hamburger::before,
+header.scrolled .hamburger::after {
+  background-color: #74262C; /* Original color after scrolling */
+}
+
+/* -------------------------------- */
+/* Hamburger Icon Transition States */
+/* -------------------------------- */
+
+/* When header is scrolled */
+header.scrolled .hamburger {
+  background: #74262C;
+}
+
+header.scrolled .hamburger::before,
+header.scrolled .hamburger::after {
+  background: #74262C;
+}
+
+/* When the menu is visible */
+.nav--visible .hamburger {
+  background-color: transparent; /* Hide middle bar */
+  transform: rotate(-45deg); /* Rotate top bar */
+}
+
+.nav--visible .hamburger::before,
+.nav--visible .hamburger::after {
+  top: 0;
+  transform: rotate(45deg); /* Rotate bottom bar */
+}
+
+/* -------------------------------- */
+/* Miscellaneous */
+/* -------------------------------- */
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.heading-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.nav-toggle {
+  cursor: pointer;
+  border: 0;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background: rgba(0, 0, 0, 0);
+  color: #74262C;
+  transition: opacity 250ms ease;
+  z-index: 9999;
+}
+
+header {
+  background: #EBE0D5;
+  padding: 0.7em 0;
+  z-index: 999;
+  width: 100%;
+}
+
 
 
 
@@ -250,7 +292,7 @@ header {
   position: relative;
   max-width: 100%;
   margin: 0 auto;
-  height: 80vh;
+  height: 100vh;
   padding: 60px 0 70px 0;
   background-image: url('img/hero-img.jpg');
   background-size: cover;
@@ -260,15 +302,17 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 0; /* Background image */
 }
 
 .overlay {
   position: absolute;
+  z-index: 2; /* Above background image */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0); /* Start transparent */
+  background-color: rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
 }
 
@@ -282,75 +326,93 @@ header {
 }
 
 .mandala-hero {
-  width: 14em;
-  height: 14em;
+  width: 12em;
+  height: 12em;
+  margin-bottom: 4em;
+  z-index: 3;
 }
 
-.hero-arrow {
-width: 3em;
-height: 3em;
-opacity: 0; /* Start invisible */
-  animation: fadeIn 1s ease-in 1.5s forwards;
-}
-
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-}
 
 .hero h1 {
+  z-index: 5; /* Ensure h1 is above everything else */
   font-family: "Italianno", cursive;
   font-weight: 400;
   font-style: normal;
   font-size: 7rem;
   color: #F9DBA6;
   text-decoration: none;
-  margin: 0;
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden; /* Hide overflowing text */
+  margin: 0 0 0.3em 0;
+  white-space: nowrap;
+  overflow: hidden;
   display: inline-block;
-  text-align: center; /* Keeps text centered */
-  animation: typing 1.5s steps(40, end) forwards; /* Smooth typing effect */
+  text-align: center;
+  animation: typing 1.5s steps(40, end) forwards;
+  
 }
 
 @keyframes typing {
   from {
-    clip-path: inset(0 100% 0 0); /* Start with text hidden on the right */
+    clip-path: inset(0 100% 0 0);
   }
   to {
-    clip-path: inset(0 0 0 0); /* Reveal entire text */
+    clip-path: inset(0 0 0 0);
   }
 }
 
-.hero__text h3 {
-  font-size: 2rem;
-  color: #F9DBA6;
-  margin-top: 1em;
-  opacity: 0; /* Start invisible */
-  animation: fadeIn 1s ease-in 1.5s forwards; /* Delayed fade-in after h1 */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Shadow effect */
+.hero-scroll-btn {
+  position: absolute; /* Position relative to the parent container */
+  bottom: 4em; /* Adjust the distance from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center adjustment */
+  z-index: 5; /* Ensure it stays above other elements if needed */
 }
 
-@keyframes fadeIn {
-  from {
-      opacity: 0;
+a#scroll-btn {
+  height: 4em;
+  width: 2.5em;
+  border: 0.15em solid #fff;
+  border-radius: 1.6em;
+  display: block; /* Ensures it's treated as a block element */
+}
+
+/* Style for the scroll button's dot */
+a#scroll-btn::before {
+  position: absolute;
+  content: "";
+  top: 50%; /* Position the dot vertically centered */
+  left: 50%; /* Position the dot horizontally centered */
+  transform: translate(-50%, -50%); /* Corrects the centering */
+  width: 0.5em;
+  height: 0.5em;
+  background-color: #fff; /* White dot */
+  border-radius: 50%; /* Make it circular */
+  animation: move-down 2s infinite; /* Apply the animation */
+}
+
+/* Animation for the dot */
+@keyframes move-down {
+  0% {
+    transform: translate(-50%, -50%); /* Start at the centered position */
   }
-  to {
-      opacity: 1;
+  50% {
+    transform: translate(-50%, 10px); /* Move it downward */
+  }
+
+  80% {
+    opacity: 0.5;
+  }
+  
+  100% {
+    transform: translate(-50%, -50%); /* Return to the centered position */
   }
 }
 
 
 
 .servicios{
-	background-image: url('img/shadow.png');
-    background-size: 100% auto; /* Sets width to 100% and keeps the aspect ratio */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    padding-top: 0.8em; 
+	background:rgba(242,241,240,1);
+    background: linear-gradient(0deg, #EBE0D5 0%, rgba(242,241,240,1) 100%);
+	padding: 3em 0 0 0;
 }
 
 .servicios h2{
@@ -430,11 +492,7 @@ opacity: 0; /* Start invisible */
 
 }
 
-.inner-box{
-	background:rgba(242,241,240,1);
-    background: linear-gradient(0deg, #EBE0D5 0%, rgba(242,241,240,1) 100%);
-	padding: 3em 0 0 0;
-}
+
 
 
 /* Initial state of the cards - hidden and positioned off-screen for scrolling effect*/
@@ -613,29 +671,42 @@ margin-top: 3em;
 }
 
 
-.crystals-img {
-    position: relative;
-    max-width: 100%;
-    margin: 0 auto;
-    height: 65vh;
-    padding: 60px 0 70px 0;
-    background-image: url('img/crystals.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .crystals{
-	background-image: url('img/shadow.png');
-    background-size: 100% auto; /* Sets width to 100% and keeps the aspect ratio */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    padding-top: 0.8em;
+.crystals {
+  position: relative;
+  z-index: 1; /* Keep crystals below hero section */
+  background-image: url('img/shadow.png');
+  background-size: 100% auto; /* Set width to 100% and keep aspect ratio */
+  background-repeat: no-repeat; /* Prevent repeating */
+  padding-top: 0.8em;
 }
 
+.crystals-img {
+  position: relative;
+  z-index: 2; /* Ensure it's above background */
+  max-width: 100%;
+  margin: 0 auto;
+  height: 65vh;
+  padding: 60px 0 70px 0;
+  background-image: url('img/crystals.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.crystals-overlay {
+  position: absolute;
+  z-index: 3; /* Ensure it's above crystals-img */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0); /* Start transparent */
+  transition: background-color 0.3s ease;
+}
 
 /*Footer style*/
 .footer {
@@ -941,9 +1012,6 @@ margin-top: 3em;
 /* Media Query for Smaller Screens */
 @media (max-width: 768px) {
 
-  .hero-img {
-    height: 70vh ;
-  }
   .hero h1 {
     font-size: 5rem; /* Adjust size for smaller screens */
   }
@@ -976,11 +1044,7 @@ margin-top: 3em;
 }
 
 @media (max-width: 480px) {
-  .hero-img {
-    height: 65vh; /* Smaller height */
-    
-  }
-
+  
   .hero h1 {
     font-size: 4rem;
   }
@@ -1016,16 +1080,19 @@ margin-top: 3em;
 
 
 /* Scroll-in animation for large screens */
+/* Make animation slower for larger screens */
 @media (min-width: 768px) {
+  .card {
+    transition: transform 1.4s ease, opacity 1.4s ease; /* Slow down the animation */
+  }
+
   .card.visible {
-    opacity: 1;
-    transform: translateX(0); /* Cards come from the right */
+    transition-delay: 0.8s; /* Stagger the visible class with a delay for better effect */
   }
 }
 
-@media (min-width: 480px) {
-  .card.visible {
-    opacity: 1;
-    transform: translateX(0); /* Cards come from the right */
-  }
+.card.visible {
+  opacity: 1;
+  transform: translateY(0); /* Reset the position when visible */
 }
+

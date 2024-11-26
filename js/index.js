@@ -8,6 +8,18 @@
 	  nav.classList.toggle("nav--visible");
 	});
 
+//header scrolling effect
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.getElementById("main-header");
+
+  window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+      } else {
+          header.classList.remove("scrolled");
+      }
+  });
+});
 
 //hero parallax scrolling effect
 
@@ -35,6 +47,21 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener('scroll', updateEffects);
 });
 
+
+//Crystal parallax scrolling effect
+
+document.addEventListener("DOMContentLoaded", function() {
+  var CrystalsImg = document.querySelector('.crystals-img');
+  var crystalsOverlay = document.querySelector('.crystals-overlay');
+  
+  // Function to update parallax and darkening effects
+  function updateEffects() {
+    var scrollPos = window.scrollY;
+    
+    // Parallax effect
+    heroImg.style.transform = 'translateY(' + scrollPos * 0.4 + 'px)';
+  }
+  });
 
 
 // h1 animation, main title
